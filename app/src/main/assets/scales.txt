@@ -1,0 +1,15 @@
+﻿C Major
+G Major
+D Major
+A Major
+E Major
+B Major 
+F# Major
+C# Major
+F Major
+B♭ Major
+E♭ Major
+A♭ Major
+D♭ Major
+G♭ Major
+C♭ Major

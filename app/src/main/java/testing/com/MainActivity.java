@@ -96,7 +96,9 @@ public class MainActivity extends AppCompatActivity {
         Restartbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txt.setText("Scale Tester");
+                progr = 0;
+                ProgBar.setProgress(progr);
+                txt.setText("START");
                 scales.Generator();
                 i=0;
             }

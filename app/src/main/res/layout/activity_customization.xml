@@ -68,11 +68,11 @@
     <TextView
         android:id="@+id/ChooseScales"
         android:layout_width="212dp"
-        android:layout_height="76dp"
+        android:layout_height="80dp"
         android:gravity="center"
         android:text="@string/choose_your_scales"
-        android:textSize="22sp"
         android:textColor="@android:color/background_light"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

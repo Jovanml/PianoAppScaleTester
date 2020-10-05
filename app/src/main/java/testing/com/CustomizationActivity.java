@@ -3,6 +3,7 @@ package testing.com;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,8 +40,8 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 spinString1 = parent.getItemAtPosition(position).toString();
-
             }
 
             @Override
@@ -52,6 +53,7 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 if(parent.getItemAtPosition(position).toString().equals("---")) {
                     spinString2 = null;
                 }else{
@@ -68,6 +70,7 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 spinString3 = parent.getItemAtPosition(position).toString();
 
             }
@@ -81,6 +84,7 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 if(parent.getItemAtPosition(position).toString().equals("---")){
                     spinString4 = null;
                 }else{
@@ -98,6 +102,7 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 spinString5 = parent.getItemAtPosition(position).toString();
 
             }

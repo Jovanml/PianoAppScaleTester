@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -26,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
     private TextToSpeech mTTS;
     private SeekBar mSpeed;
     private SeekBar mPitch;
+    private int progr = 0;
     TextView txt;
     Button Generatebtn;
     Button Customizebtn;
     Button Restartbtn;
     ScaleGenerator scales;
+    ProgressBar ProgBar;
     int i;
+    int increment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         scales.Generator();
         Generatebtn = (Button) findViewById(R.id.GenerateButton);
         Customizebtn = (Button) findViewById(R.id.CustomizeButton);
-        txt = (TextView) findViewById(R.id.textView);
+        ProgBar = findViewById(R.id.progressBar);
+        txt = (TextView) findViewById(R.id.scalesText);
         Restartbtn = (Button) findViewById(R.id.restartButton);
 
         Generatebtn.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +57,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String scale = scales.getScaleAtIndex(i);
                 txt.setText(scale);
+                if(scales.getLength() == 0){
+                    increment = 100;
+                }
+                else{
+                    if(100%scales.getLength() !=0){
+                        increment = (100/scales.getLength()) + 1;
+                    }
+                    else{
+                        increment = 100/scales.getLength();
+                    }
+                }
+
+                if((progr+increment) <=100){
+                    progr += increment;
+                    ProgBar.setProgress(progr);
+                }
+                else{
+                    increment = 100 - progr;
+                    progr += increment;
+                    ProgBar.setProgress(progr);
+                }
+
                 if(scale != "Finished") {
                     speak(scale);
                 }
@@ -139,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("There is no file with that name");
         }
     }
+
 
 
 }

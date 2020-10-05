@@ -24,5 +24,8 @@ public class ScaleGenerator {
 
         }
     }
+    public int getLength(){
+        return scalesArray.size();
+    }
 
 }

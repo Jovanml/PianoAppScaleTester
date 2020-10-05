@@ -19,8 +19,8 @@ import java.io.OutputStreamWriter;
 
 public class CustomizationActivity extends AppCompatActivity {
     public static String FILE_NAME = "scales.txt";
-    Spinner spinner1; Spinner spinner2; Spinner spinner3; Spinner spinner4;
-    String spinString1; String spinString2; String spinString3; String spinString4;
+    Spinner spinner1; Spinner spinner2; Spinner spinner3; Spinner spinner4; Spinner spinner5;
+    String spinString1; String spinString2; String spinString3; String spinString4; String spinString5;
     Button addButton;
     Button customBack;
     Button resetButton;
@@ -45,7 +45,6 @@ public class CustomizationActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                spinString1 = "";
             }
         });
 
@@ -53,12 +52,15 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spinString2 = parent.getItemAtPosition(position).toString();
+                if(parent.getItemAtPosition(position).toString().equals("---")) {
+                    spinString2 = null;
+                }else{
+                    spinString2 = parent.getItemAtPosition(position).toString();
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                spinString2 = "";
             }
         });
 
@@ -66,16 +68,12 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(parent.getItemAtPosition(position).toString().equals("---")){
-                    spinString3 = null;
-                }else {
-                    spinString3 = parent.getItemAtPosition(position).toString();
-                }
-                }
+                spinString3 = parent.getItemAtPosition(position).toString();
+
+            }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                spinString3 = "";
             }
         });
 
@@ -83,13 +81,29 @@ public class CustomizationActivity extends AppCompatActivity {
         spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spinString4 = parent.getItemAtPosition(position).toString();
+                if(parent.getItemAtPosition(position).toString().equals("---")){
+                    spinString4 = null;
+                }else{
+                    spinString4 = parent.getItemAtPosition(position).toString();
+                }
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                spinString4 = "";
+            }
+        });
+
+        spinner5 = (Spinner)findViewById(R.id.spinner5);
+        spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spinString5 = parent.getItemAtPosition(position).toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
             }
         });
 
@@ -97,10 +111,17 @@ public class CustomizationActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(spinString3 !=null){
-                    scale = spinString1 + " " + spinString2 + " " + spinString3 + " " + spinString4;
-                }else{
-                    scale = spinString1 + " " + spinString2 + " " + spinString4;
+                if(spinString2 == null & spinString4 == null){
+                    scale = spinString1 + " " + spinString3 + " " + spinString5;
+                }
+                else if(spinString2 == null){
+                    scale = spinString1 + " " + spinString3 + " " + spinString4 + " " + spinString5;
+                }
+                else if(spinString4 == null){
+                    scale = spinString1 + " " + spinString2 + " " + spinString3 + " " + spinString5;
+                }
+                else{
+                    scale = spinString1 + " " + spinString2 + " " + spinString3 + " " + spinString4 + " " + spinString5;
                 }
 
                 if(exists(scale) == false){

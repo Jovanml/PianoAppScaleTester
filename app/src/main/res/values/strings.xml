@@ -11,27 +11,32 @@
     <string name="pitch">Pitch</string>
     <string name="speed">Speed</string>
     <string name="restartButton">Restart</string>
+    <string name="customize">+</string>
+    <string name="back_button">Back</string>
+    <string name="main_text">START</string>
 
     <string-array name= "spinner1">
-        <item>C♭</item> <item>C</item> <item>C#</item>
-        <item>D♭</item> <item>D</item> <item>D#</item>
-        <item>E♭</item> <item>E</item> <item>E#</item>
-        <item>F♭</item> <item>F</item> <item>F#</item>
-        <item>G♭</item> <item>G</item> <item>G#</item>
-        <item>A♭</item> <item>A</item> <item>A#</item>
-        <item>B♭</item> <item>B</item> <item>B#</item>
+        <item>C</item> <item>D</item> <item>E</item>
+        <item>F</item> <item>G</item> <item>A</item>
+        <item>B</item>
     </string-array>
 
     <string-array name= "spinner2">
-        <item>Major</item> <item>Minor</item>
+        <item>Sharp</item> <item>Flat</item> <item>---</item>
     </string-array>
 
     <string-array name= "spinner3">
-        <item>"---"</item> <item>Harmonic</item> <item>Melodic</item>
-        <item>Dominant 7th</item> <item>Diminished 7th</item>
+        <item>Major</item> <item>Minor</item>
     </string-array>
 
     <string-array name= "spinner4">
-        <item>Scale</item> <item>3 Note Chord</item> <item>4 Note Chord</item>  <item>Arpeggio</item>
+        <item>Harmonic</item> <item>Melodic</item> <item>Dominant 7th</item>
+        <item>Diminished 7th</item> <item>"---"</item>
     </string-array>
+
+    <string-array name= "spinner5">
+        <item>Scale</item> <item>triad</item> <item>3 Note Chord</item>
+        <item>4 Note Chord</item>  <item>Arpeggio</item>
+    </string-array>
+
 </resources>

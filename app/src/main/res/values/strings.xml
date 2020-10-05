@@ -35,7 +35,7 @@
     </string-array>
 
     <string-array name= "spinner5">
-        <item>Scale</item> <item>triad</item> <item>3 Note Chord</item>
+        <item>Scale</item> <item>Triad</item> <item>3 Note Chord</item>
         <item>4 Note Chord</item>  <item>Arpeggio</item>
     </string-array>
 
